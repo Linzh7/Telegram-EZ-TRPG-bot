@@ -15,7 +15,7 @@ config = dotenv_values(".env")
 user_db = database.user_db
 
 def main():
-    app = ApplicationBuilder().token(config('TG_TOKEN')).build()
+    app = ApplicationBuilder().token(config['TG_TOKEN']).build()
 
     app.add_handler(MessageHandler(filters.Regex(EXIST_REGEX), dice.call_roll))
     app.add_handler(CommandHandler(['setspell','set'], storage.set_spell))
