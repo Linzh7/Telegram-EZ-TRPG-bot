@@ -28,4 +28,4 @@ if __name__ == '__main__':
     main()
 
 user_db.close_database()
-print('Database closed.')
+print('[System] Database closed.')

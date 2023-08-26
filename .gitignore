@@ -1,9 +1,6 @@
 .DS_Store
 
 /.vscode/
-/WordpressExtract/post
-TOKEN.py
-
 ./cmake-build-debug/
 
 # Byte-compiled / optimized / DLL files
@@ -152,4 +149,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /Algorithm
-/Living/cn.software/model/*.dat
+
+# project
+TOKEN.py
+*.db
