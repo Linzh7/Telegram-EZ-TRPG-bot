@@ -1,5 +1,5 @@
 import re
-import random
+from random_dice import *
 from database import user_db
 from message_processer import *
 
@@ -12,8 +12,7 @@ def split_element(input_str):
     ele_list = re.findall(DICE_REGEX, input_str)
     return ele_list[0]
 
-def roll_dice(dice_num, dice_sides):
-    return [random.randint(1, dice_sides) for _ in range(dice_num)]
+
 
 def compute_equation(value, equation):
     try:
