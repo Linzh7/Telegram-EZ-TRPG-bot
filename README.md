@@ -3,6 +3,7 @@
 - no command or mark needed.
 - support multi-action in one message.
 - support store user-define commands (spells) and cast them.
+- combat record
 
 Therefore, please set this bot as admin.
 
@@ -92,4 +93,14 @@ fallasleep: 2 4d6+4 fallasleep
 1-1# 16[4+2+5+5]+4 = 20
 ```
 
+## combat 
 
+Once you start a combat, this bot could manage participants and their order.
+
+1. You can start a combat with `/start` or `/startcombat`. 
+1. The bot will create a empty queue.
+1. To join this combat, you should find your dexterity modifier then type it after the join command, e.g., `/join 3`, where '3' is this character's dexterity modifier.
+1. If you all are ready for the combat, you can use `/query` to list the action orders.
+1. `/next` is the command to start or move on.
+1. `/previous` could return to the previous status.
+1. You can also end the combat by `/end`.
