@@ -1,6 +1,7 @@
 import re
 import random
 from database import user_db
+from message_processer import *
 
 DICE_REGEX = r'^(\d+ )?(\d+)?[dD](\d+)(\S*) ?(\S*)?$'
 
@@ -27,9 +28,8 @@ async def call_roll(update, context):
     await update.message.reply_text(response, parse_mode='HTML')
 
 async def cast_spell(update, context):
-    # username = update.message.from_user.username if update.message.from_user.username else update.message.from_user.first_name
-    username = update.message.chat.username if update.message.chat.username else update.message.chat.first_name
-    user_id = update.message.chat.id
+    username, user_id = get_username_id(update.message)
+    
     for spell_name in context.args:
         spell_command = user_db.get_user_command(user_id, spell_name)
         if spell_command:

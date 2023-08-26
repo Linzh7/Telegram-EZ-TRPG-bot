@@ -27,6 +27,8 @@ class UserDB:
         self.sync_user_db()
 
     def get_user_command(self, user_id, trigger):
+        if str(user_id) not in self.user_db.keys():
+            return None
         return self.user_db[str(user_id)][trigger]
     
 user_db = UserDB()
