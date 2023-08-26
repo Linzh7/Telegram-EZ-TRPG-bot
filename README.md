@@ -2,6 +2,7 @@
 
 - no command or mark needed.
 - support multi-action in one message.
+- support store user-define commands (spells) and cast them.
 
 Therefore, please set this bot as admin.
 
@@ -48,3 +49,47 @@ def: 2 d4 def
 1-0# 3[3] = 3
 1-1# 4[4] = 4
 ```
+
+## command formats
+
+### set spell
+
+User should replace any space in the command part with either '.' or ',', because telegram will consider space as a args spliter. If you want to set multi-command, add ';' between them instead of Return (NewLind).
+
+You can set your own spells by:
+
+- `set`
+- `setspell`
+
+For example,
+input:
+```
+/set morning 1.4d10*2+10.getup;2.4d6+4,fallasleep
+```
+output:
+```
+@xxx, your spell morning has been set to 1 4d10*2+10 getup
+2 4d6+4 fallasleep from None.
+```
+
+### cast spell
+
+- `cast`
+- `castspell`
+
+For example,
+after setting the `morning` spell,
+```
+/cast morning
+```
+output:
+```
+@xxx, you have 2 action(s):
+getup: 1 4d10*2+10 getup
+0-0# 19[2+10+5+2]*2+10 = 48
+fallasleep: 2 4d6+4 fallasleep
+1-0# 21[6+4+5+6]+4 = 25
+1-1# 16[4+2+5+5]+4 = 20
+```
+
+
