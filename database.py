@@ -13,6 +13,11 @@ class UserDB:
     def sync_user_db(self):
         self.user_db.sync()
 
+    def get_user_dict(self, user_id):
+        if str(user_id) not in self.user_db.keys():
+            return {}
+        return self.user_db[str(user_id)]
+
     def set_user_dict(self, user_id, key, value):
         if str(user_id) not in self.user_db.keys():
             self.user_db[str(user_id)] = {}

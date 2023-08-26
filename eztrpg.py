@@ -20,6 +20,7 @@ def main():
     app.add_handler(MessageHandler(filters.Regex(EXIST_REGEX), dice.call_roll))
     app.add_handler(CommandHandler(['setspell','set'], storage.set_spell))
     app.add_handler(CommandHandler(['castspell','cast'], dice.cast_spell))
+    app.add_handler(CommandHandler(['spelllist'], storage.get_spell_list))
 
     app.add_error_handler(error_handler.update_error_handler)
 
