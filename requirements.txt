@@ -1,2 +1,2 @@
-dotenv_values
+python-dotenv
 python-telegram-bot
